@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>深圳→厦门→漳州 清明自驾游攻略</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --danger: #ff6b6b;
+            --warning: #ffc107;
+            --success: #4caf50;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .header {
+            background: rgba(255,255,255,0.98);
+            border-radius: 24px;
+            padding: 35px 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 33%, #4facfe 66%, #00f2fe 100%);
+            background-size: 300% 300%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .title {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+            transition: transform 0.3s;
+        }
+        
+        .tag:hover {
+            transform: translateY(-2px);
+        }
+        
+        .urgent-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 6px solid #ff6b6b;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .urgent-box::after {
+            content: '⚡';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 60px;
+            opacity: 0.1;
+        }
+        
+        .urgent-title {
+            color: #ff6b6b;
+            font-weight: 800;
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.15);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+        
+        .checklist li:hover {
+            background: rgba(255,255,255,0.3);
+            margin: 0 -10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 8px;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #ff6b6b;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b6b;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 16px;
+        }
+        
+        .checkbox:hover, .checkbox.checked {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .day-card {
+            background: rgba(255,255,255,0.98);
+            border-radius: 24px;
+            padding: 30px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .day-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 24px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .day-info h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+        
+        .day-info p {
+            font-size: 14px;
+            color: #888;
+            font-weight: 500;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2, #f093fb);
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid #e8e8e8;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(8px) translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-color: #667eea;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #667eea;
+            z-index: 2;
+        }
+        
+        .timeline-item.highlight-item::before {
+            background: #f5576c;
+            box-shadow: 0 0 0 4px #f5576c;
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 4px #f5576c, 0 0 0 8px rgba(245, 87, 108, 0.3); }
+            50% { box-shadow: 0 0 0 4px #f5576c, 0 0 0 12px rgba(245, 87, 108, 0.1); }
+        }
+        
+        .time-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+        
+        .activity-title {
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 8px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .activity-desc {
+            color: #555;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 3px 10px;
+            border-radius: 6px;
+            color: #764ba2;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .warning {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 5px solid #ffc107;
+            padding: 14px;
+            margin-top: 12px;
+            border-radius: 0 12px 12px 0;
+            font-size: 13.5px;
+            color: #856404;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .warning::before {
+            content: '⚠️';
+            flex-shrink: 0;
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .food-tag {
+            background: white;
+            border: 2px solid #e8e8e8;
+            padding: 10px 8px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 13px;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+        }
+        
+        .food-tag:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .cost-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-top: 25px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cost-summary::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+        
+        .cost-title {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cost-amount {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cost-per {
+            font-size: 22px;
+            opacity: 0.95;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cost-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cost-item {
+            background: rgba(255,255,255,0.2);
+            padding: 14px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-section {
+            background: rgba(255,255,255,0.98);
+            border-radius: 24px;
+            padding: 30px 25px;
+            margin-top: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        
+        .nav-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-links {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 14px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            border: 2px solid #e8e8e8;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(8px);
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 20px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            opacity: 1;
+            right: 15px;
+        }
+        
+        .nav-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover .nav-icon {
+            background: white;
+            color: #667eea;
+            transform: scale(1.1);
+        }
+        
+        .nav-text div:first-child {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        .nav-text div:last-child {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+        
+        .tips-box {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tips-box::after {
+            content: '💡';
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            font-size: 80px;
+            opacity: 0.15;
+        }
+        
+        .tips-title {
+            font-weight: 800;
+            color: #4a5568;
+            margin-bottom: 18px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tips-list {
+            list-style: none;
+            font-size: 14.5px;
+            color: #4a5568;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tips-list li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-weight: 600;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+        
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tips-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            padding: 30px 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .footer p:first-child {
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            font-size: 24px;
+            border: 3px solid white;
+            transform: translateY(20px);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-top:active {
+            transform: scale(0.95);
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,255,255,0.3);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 600px) {
+            .title {
+                font-size: 26px;
+            }
+            .cost-amount {
+                font-size: 42px;
+            }
+            .cost-breakdown {
+                grid-template-columns: 1fr;
+            }
+            .food-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .day-card {
+                padding: 25px 20px;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .strikethrough {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部信息 -->
+        <div class="header fade-in">
+            <h1 class="title">🚗 深圳→厦门→漳州</h1>
+            <p class="subtitle">清明节自驾游攻略 | 2026.4.3-4.6 | 5人同行</p>
+            <div class="tags">
+                <span class="tag">人均¥741</span>
+                <span class="tag">3天2晚</span>
+                <span class="tag">自驾580km</span>
+                <span class="tag">高速免费</span>
+            </div>
+        </div>
+
+        <!-- 紧急提醒 -->
+        <div class="urgent-box fade-in">
+            <div class="urgent-title pulse">
+                <span>⏰</span>
+                <span>今晚必须完成（4月3日）</span>
+            </div>
+            <ul class="checklist">
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox">□</span>
+                    <div>
+                        <strong>订鼓浪屿船票 <span class="badge">🔥 最紧急</span></strong>
+                        <div style="font-size: 13px; color: #666; margin-top: 6px; line-height: 1.5;">
+                            微信搜"屿见厦门"小程序 → 买4月4日 09:10班次<br>
+                            邮轮中心厦鼓码头→三丘田码头，35元/人，5人共175元
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox">□</span>
+                    <div>
+                        <strong>南普陀寺预约</strong>
+                        <div style="font-size: 13px; color: #666; margin-top: 6px;">
+                            微信搜"南普陀寺预约服务平台" → 选4月4日上午场次
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox">□</span>
+                    <div>
+                        <strong>订集美酒店 <span class="badge">🏨 带停车场</span></strong>
+                        <div style="font-size: 13px; color: #666; margin-top: 6px;">
+                            推荐：全季酒店(集美店)/亚朵酒店(集美大学店)<br>
+                            2间双床房约400元/晚，确认免费停车
+                        </div>
+                    </div>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox">□</span>
+                    <div>
+                        <strong>车辆检查+加油</strong>
+                        <div style="font-size: 13px; color: #666; margin-top: 6px;">
+                            轮胎、机油、冷却液、备胎、充电宝、晕车药、零食饮料
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Day 0 -->
+        <div class="day-card fade-in">
+            <div class="day-header">
+                <div class="day-number">0</div>
+                <div class="day-info">
+                    <h3>🌙 4月3日（周五）夜奔厦门</h3>
+                    <p>深圳出发 → 厦门集美 | 580km | 约6.5小时</p>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">20:00</span>
+                    <div class="activity-title">深圳集合出发</div>
+                    <div class="activity-desc">
+                        建议福田/南山集合，<span class="highlight">提前加满油</span>，备足零食饮料<br>
+                        路线：深汕高速→甬莞高速→沈海高速（避开周五晚高峰）
+                    </div>
+                    <div class="warning">
+                        厦门交警提示：4月3日15时起"五桥两隧"出岛方向拥堵，建议20:00后再出发
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">23:00</span>
+                    <div class="activity-title">服务区休息换人</div>
+                    <div class="activity-desc">
+                        汕尾或陆丰服务区休息，活动筋骨，换人驾驶
+                    </div>
+                </div>
+                <div class="timeline-item highlight-item">
+                    <span class="time-badge">02:30-03:00</span>
+                    <div class="activity-title">抵达厦门集美酒店</div>
+                    <div class="activity-desc">
+                        <span class="highlight">关键技巧！</span>4月4日0点后下高速，立省280元过路费！<br>
+                        住宿：集美区全季/亚朵（2间双床房约400元）
+                    </div>
+                    <div class="warning">
+                        停车提示：集美区酒店停车免费/便宜，地铁1号线20分钟进岛，避开岛内停车难和单双号限行风险
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 1 -->
+        <div class="day-card fade-in">
+            <div class="day-header">
+                <div class="day-number">1</div>
+                <div class="day-info">
+                    <h3>☀️ 4月4日（周六）厦门精华游</h3>
+                    <p>鼓浪屿+沙坡尾+环岛路+八市</p>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">08:00</span>
+                    <div class="activity-title">集美早餐</div>
+                    <div class="activity-desc">
+                        推荐：集美大社沙茶面（本地老店，人均15元）
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">09:00</span>
+                    <div class="activity-title">地铁1号线进岛</div>
+                    <div class="activity-desc">
+                        <span class="highlight">海上地铁段</span>风景绝佳，高崎→集美学村段看海景<br>
+                        镇海路站下车，步行至邮轮中心（约10分钟）
+                    </div>
+                </div>
+                <div class="timeline-item highlight-item">
+                    <span class="time-badge">09:30</span>
+                    <div class="activity-title">🚢 鼓浪屿（已订票！）</div>
+                    <div class="activity-desc">
+                        路线：三丘田码头→最美转角→日光岩(60元)→菽庄花园(30元)→龙头路小吃街<br>
+                        船票35元往返，<span class="highlight">刷身份证直接登船</span>，无需取票
+                    </div>
+                    <div class="food-grid">
+                        <div class="food-tag">🥧 沈家肠粉</div>
+                        <div class="food-tag">🍦 土耳其冰淇淋</div>
+                        <div class="food-tag">🍵 张三疯奶茶</div>
+                        <div class="food-tag">🍪 黄胜记肉松</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">15:30</span>
+                    <div class="activity-title">沙坡尾艺术西区</div>
+                    <div class="activity-desc">
+                        文艺街区打卡，老渔港改造的创意园区，适合拍照
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">17:00</span>
+                    <div class="activity-title">环岛路骑行/白城沙滩</div>
+                    <div class="activity-desc">
+                        租共享单车，5人骑行吹海风，看日落（曾厝垵到黄厝海滨段最美）
+                    </div>
+                </div>
+                <div class="timeline-item highlight-item">
+                    <span class="time-badge">18:30</span>
+                    <div class="activity-title">🦐 八市海鲜市场晚餐</div>
+                    <div class="activity-desc">
+                        本地人菜市场，海鲜加工便宜<br>
+                        <span class="highlight">必吃：</span>阿杰五香、朱记手撕鸡、友生风味小吃、海鲜大排档<br>
+                        人均80元吃到撑！
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">20:00</span>
+                    <div class="activity-title">中山路步行街夜游</div>
+                    <div class="activity-desc">
+                        骑楼建筑夜景，买杯八婆婆烧仙草，感受南洋风情
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">21:30</span>
+                    <div class="activity-title">地铁返回集美酒店</div>
+                    <div class="activity-desc">
+                        地铁1号线返回，或打车约40元
+                    </div>
+                    <div class="warning">
+                        重要：厦门岛内节假日可能单双号限行，车停集美地铁进岛最保险！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card fade-in">
+            <div class="day-header">
+                <div class="day-number">2</div>
+                <div class="day-info">
+                    <h3>🏛️ 4月5日（周日）厦门→漳州→返程</h3>
+                    <p>南普陀+漳州古城+返程深圳</p>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time-badge">08:00</span>
+                    <div class="activity-title">酒店退房，自驾进岛</div>
+                    <div class="activity-desc">
+                        周末早上市区不堵，开车前往南普陀寺
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">08:30</span>
+                    <div class="activity-title">南普陀寺（已预约）</div>
+                    <div class="activity-desc">
+                        闽南佛教圣地，免费参观，素饼好吃适合当伴手礼
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">10:00</span>
+                    <div class="activity-title">厦门大学外观/白城沙滩</div>
+                    <div class="activity-desc">
+                        厦大需提前3天预约，没约到就在门口拍照+沙滩玩水
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">11:30</span>
+                    <div class="activity-title">厦门大学路面线糊午餐</div>
+                    <div class="activity-desc">
+                        亚海面线糊、烧肉粽，人均30元
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">12:30</span>
+                    <div class="activity-title">出发前往漳州古城</div>
+                    <div class="activity-desc">
+                        走海沧大桥→厦漳大桥，约1小时车程
+                    </div>
+                </div>
+                <div class="timeline-item highlight-item">
+                    <span class="time-badge">13:30-17:00</span>
+                    <div class="activity-title">🏛️ 漳州古城深度游</div>
+                    <div class="activity-desc">
+                        路线：香港路骑楼→台湾路→文庙（免费）→中山公园→延安南路小吃街<br>
+                        明清古建筑+闽南烟火气，比厦门更原生态
+                    </div>
+                    <div class="food-grid">
+                        <div class="food-tag">🦪 建国蚵煎</div>
+                        <div class="food-tag">🍧 原公园四果汤</div>
+                        <div class="food-tag">🍜 阿芳卤面</div>
+                        <div class="food-tag">🧋 片仔癀甘蔗汁</div>
+                        <div class="food-tag">🥟 孙氏麻糍</div>
+                        <div class="food-tag">🍖 李记沙茶里脊</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="time-badge">17:00</span>
+                    <div class="activity-title">买特产，准备返程</div>
+                    <div class="activity-desc">
+                        推荐：片仔癀草甘蔗汁（清热降火）、白水贡糖、八宝印泥
+                    </div>
+                </div>
+                <div class="timeline-item highlight-item">
+                    <span class="time-badge">17:30</span>
+                    <div class="activity-title">返程深圳</div>
+                    <div class="activity-desc">
+                        走沈海高速，预计23:30-00:30抵达<br>
+                        <span class="highlight">务必在4月6日00:30前下高速</span>，才能享受免费！
+                    </div>
+                    <div class="warning">
+                        返程高峰预警：4月5日14时起厦门往漳州方向拥堵，建议17:30准时出发
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 费用总结 -->
+        <div class="cost-summary fade-in">
+            <div class="cost-title">💰 总费用预算</div>
+            <div class="cost-amount">¥3,705</div>
+            <div class="cost-per">人均 ¥741 <span style="font-size: 14px; opacity: 0.8;">（预算内剩余¥259）</span></div>
+            
+            <div class="cost-breakdown">
+                <div class="cost-item">
+                    <span>⛽ 油费（往返1100km）</span>
+                    <span>¥650</span>
+                </div>
+                <div class="cost-item">
+                    <span>🛣️ 高速费（去程）</span>
+                    <span>¥280</span>
+                </div>
+                <div class="cost-item">
+                    <span>🏨 住宿（2晚×2间）</span>
+                    <span>¥800</span>
+                </div>
+                <div class="cost-item">
+                    <span>🚢 鼓浪屿船票+景点</span>
+                    <span>¥475</span>
+                </div>
+                <div class="cost-item">
+                    <span>🍜 餐饮（3天×5人）</span>
+                    <span>¥1,000</span>
+                </div>
+                <div class="cost-item">
+                    <span>🚕 市内交通</span>
+                    <span>¥200</span>
+                </div>
+                <div class="cost-item">
+                    <span>🎁 特产杂费</span>
+                    <span>¥300</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 导航链接 -->
+        <div class="nav-section fade-in">
+            <div class="nav-title">🗺️ 一键导航（点击复制到地图APP）</div>
+            <div class="nav-links">
+                <div class="nav-link" onclick="copyToClipboard('深圳市到厦门市集美区')">
+                    <div class="nav-icon">🚗</div>
+                    <div class="nav-text">
+                        <div>深圳→厦门（集美）</div>
+                        <div>580km，约6.5小时</div>
+                    </div>
+                </div>
+                <div class="nav-link" onclick="copyToClipboard('邮轮中心厦鼓码头')">
+                    <div class="nav-icon">⛵</div>
+                    <div class="nav-text">
+                        <div>邮轮中心厦鼓码头</div>
+                        <div>鼓浪屿乘船点，务必提前1小时到</div>
+                    </div>
+                </div>
+                <div class="nav-link" onclick="copyToClipboard('南普陀寺')">
+                    <div class="nav-icon">🛕</div>
+                    <div class="nav-text">
+                        <div>南普陀寺</div>
+                        <div>需预约，免费参观</div>
+                    </div>
+                </div>
+                <div class="nav-link" onclick="copyToClipboard('厦门第八菜市场')">
+                    <div class="nav-icon">🦐</div>
+                    <div class="nav-text">
+                        <div>八市海鲜市场</div>
+                        <div>开禾路，本地人海鲜食堂</div>
+                    </div>
+                </div>
+                <div class="nav-link" onclick="copyToClipboard('漳州古城延安南路')">
+                    <div class="nav-icon">🏛️</div>
+                    <div class="nav-text">
+                        <div>漳州古城</div>
+                        <div>芗城区，小吃天堂</div>
+                    </div>
+                </div>
+                <div class="nav-link" onclick="copyToClipboard('漳州古城到深圳市')">
+                    <div class="nav-icon">🏠</div>
+                    <div class="nav-text">
+                        <div>漳州→深圳（返程）</div>
+                        <div>520km，约6小时</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 实用提示 -->
+        <div class="tips-box fade-in">
+            <div class="tips-title">📱 必备小程序 & 紧急电话</div>
+            <ul class="tips-list">
+                <li><strong>屿见厦门</strong> — 鼓浪屿船票官方预订（提前10天可订）</li>
+                <li><strong>南普陀寺预约服务平台</strong> — 免费预约入寺</li>
+                <li><strong>e高速 / 广东高速通</strong> — 实时路况查询</li>
+                <li><strong>高速救援：12122</strong> | <strong>厦门旅游投诉：0592-12345</strong></li>
+                <li>4月3日15时起厦门"五桥两隧"出岛方向拥堵，建议20:00后出发</li>
+                <li>返程务必在4月6日00:30前下高速，才能免通行费</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>🎋 清明节快乐 | 安全驾驶 | 旅途愉快</p>
+            <p>Generated for 5人自驾团 | 2026.4.3-4.6</p>
+        </div>
+    </div>
+
+    <div class="scroll-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // 复选框切换
+        function toggleCheck(li) {
+            const checkbox = li.querySelector('.checkbox');
+            const text = li.querySelector('strong');
+            
+            if (checkbox.textContent === '□') {
+                checkbox.textContent = '✓';
+                checkbox.classList.add('checked');
+                text.classList.add('strikethrough');
+                
+                // 震动反馈（如果支持）
+                if (navigator.vibrate) navigator.vibrate(50);
+            } else {
+                checkbox.textContent = '□';
+                checkbox.classList.remove('checked');
+                text.classList.remove('strikethrough');
+            }
+        }
+        
+        // 复制到剪贴板
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('已复制：' + text + '\n请打开地图APP粘贴搜索');
+                });
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast('已复制：' + text);
+            }
+        }
+        
+        // 显示提示
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0,0,0,0.85);
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                font-size: 14px;
+                z-index: 10000;
+                max-width: 80%;
+                text-align: center;
+                line-height: 1.5;
+                backdrop-filter: blur(10px);
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+        
+        // 滚动到顶部
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        
+        // 显示/隐藏返回顶部按钮
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 400) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.fade-in');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.animation = `none`;
+                setTimeout(() => {
+                    card.style.animation = `fadeIn 0.6s ease-out forwards`;
+                }, index * 100);
+            });
+        });
+        
+        // 防止双击缩放
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
